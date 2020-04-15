@@ -1,0 +1,57 @@
+
+forms.py
+
+
+from django import forms
+
+class NameForm(forms.Form):
+    class Meta:
+        your_name= forms.CharField(max_length=100)
+        def __str__(self):
+            return self.title
+
+
+end
+
+views.py
+
+
+
+
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from event.models import Events
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from .forms import NameForm
+
+
+
+
+
+
+def get_name(request):
+
+    if request.method == 'POST':
+        
+        form = NameForm(request.POST)
+        if form.is_valid():
+           
+            return HttpResponseRedirect('/allevents/')
+
+    else:
+        form = NameForm()
+
+    return render(request, 'forms.html', {'form': form})
+
+
+end
+
+
+urls.py
+
+
+
+
+
+    path('form/',get_name),

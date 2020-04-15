@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventzalley</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-light bg-light">
+  			<span class="navbar-brand mb-0 h1">Eventzalley</span>
+		</nav>
+	</div>
+
+
+
+
+	
+		
+
+	
+  	
+  	{% block signup %}
+
+
+  	
+  	{% endblock  %}
+
+</body>
+</html>
+
+
+
+
+	<div class="container">
+		<br>
+		{% for post in posts %}
+		<h3>{{post.title}}</h3>
+		
+		<hr>
+		{% endfor %}
+
+	</div>

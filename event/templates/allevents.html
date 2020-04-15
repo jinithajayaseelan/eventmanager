@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All events</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+</head>
+<body style="">
+	<div class="container">
+	<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="#">
+	    <img src="download.jpg" width="30" height="30" class="d-inline-block align-top" alt="">&emsp;&emsp;&emsp;
+	    	EventZalley
+	  </a>
+
+	  <a href="/signout/"><button type="button" class="btn btn-dark">Signout</button></a>
+	</nav><br>
+	<div class="card">
+  <div class="card-body">
+    <center>Let others know about the event you are hosting!</center><br>
+    <center>
+        <a href="/addevent/" ><button type="button" class="btn btn-dark">Add an event</button></a>
+    </center>
+ 
+  </div>
+</div><br>
+
+
+
+  <div class="card"><center>
+  	
+  	<h5 class="card-header"> <b>These are few events you can attend!</b></h5>
+  </center>
+  {% for post in posts %}
+  <div class="card-body"><center>
+  	
+    <h5 class="card-title">{{post.title}}</h5>
+  </center><center>
+  	
+    <p class="card-text">By clicking the button below you will be able to go to this event</p>
+  </center><center>
+  	<br>
+    <a href="/post/{{post.id}}" class="btn btn-primary">Know more</a>
+  </center>
+  </div>
+  {% endfor %}
+</div>
+
+
+	</div>
+
+</body>
+</html>
+
+
+
